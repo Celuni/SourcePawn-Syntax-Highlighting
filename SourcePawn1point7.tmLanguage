@@ -2,7 +2,7 @@
 	Created by 404UNF
 	http://www.404UNF.ca
 
-	Version: 18w20b
+	Version: 18w20c
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -294,7 +294,7 @@
 		<!-- 1.6 syntax variable defines -->
 		<dict>
 			<key>match</key>
-			<string>(\b)(any:|_:|bool:|Float:|String:|Handle:|AdmAccessMode:|AdminCachePart:|AdminFlag:|AdminId:|GroupId:|OverrideRule:|OverrideType:|ArrayList:|ArrayStack:|StringMap:|StringMapSnapshot:|BfRead:|BfWrite:|CookieAccess:|CookieMenu:|CookieMenuAction:|CookieMenuHandler:|AuthIdType:|NetFlow:|MultiTargetFilter:|CommandListener:|ConCmd:|QueryCookie:|ReplySource:|SrvCmd:|ConVar:|ConVarBounds:|ConVarChanged:|ConVarQueryFinished:|ConVarQueryResult:|Action:|Extension:|Identity:|PluginInfo:|PluginStatus:|PlVers:|SharedPlugin:|CSRoundEndReason:|CSWeaponID:|DataPack:|DataPackPos:|Database:|DBBindType:|DBDriver:|DBPriority:|DBResult:|DBResultSet:|DBStatement:|SQLConnectCallback:|SQLQueryCallback:|SQLTCallback:|SQLTxnFailure:|SQLTxnSuccess:|Transaction:|PropFieldType:|PropType:|MoveType:|RenderFx:|RenderMode:|Event:|EventHook:|EventHookMode:|DirectoryListing:|File:|FileTimeMode:|FileType:|PathType:|ExecType:|NativeCall:|ParamType:|RequestFrameCallback:|ClientRangeType:|DialogType:|EngineVersion:|FindMapResult:|Handle:|KeyValues:|KvDataTypes:|GameLogHook:|MapChange:|NominateResult:|Menu:|MenuAction:|MenuHandler:|MenuSource:|MenuStyle:|Panel:|VoteHandler:|Protobuf:|Regex:|RegexError:|SDKHookCB:|SDKHookType:|UseType:|SDKCallType:|SDKFuncConfSource:|SDKLibrary:|SDKPassMethod:|SDKType:|EntityOutput:|RoundState:|AmbientSHook:|NormalSHook:|TEHook:|RayType:|TraceEntityFilter:|ListenOverride:|SortFunc1D:|SortFunc2D:|SortFuncADTArray:|SortOrder:|SortType:|Address:|APLRes:|FeatureStatus:|FeatureType:|NumberType:|Plugin:|SMCError:|SMCParser:|SMCResult:|SMC_EndSection:|SMC_KeyValue:|SMC_NewSection:|SMC_ParseEnd:|SMC_ParseStart:|SMC_RawLine:|TFClassType:|TFCond:|TFHoliday:|TFObjectMode:|TFObjectType:|TFTeam:|TFResourceType:|Timer:|TopMenu:|TopMenuAction:|TopMenuHandler:|TopMenuObject:|TopMenuObjectType:|TopMenuPosition:|MsgHook:|MsgPostHook:|UserMessageType:|UserMsg:|FrameIterator:)</string>
+			<string>\b(Plugin|SharedPlugin|Extension|any|_|bool|function|Float|String|Action|Handle|AdminFlag|OverrideType|OverrideRule|OverrideId|ImmunityType|GroupId|AdminId|AdmAccessMode|AdminCachePart|ArrayList|ArrayStack|StringMap|StringMapSnapshot|BfWrite|BfRead|CookieAccess|CookieMenu|CookieMenuAction|CookieMenuHandler|NetFlow|AuthIdType|MultiTargetFilter|QueryCookie|ReplySource|SrvCmd|ConCmd|CommandListener|ConVarBounds|ConVarQueryResult|ConVarChanged|ConVar|ConVarQueryFinished|PlVers|Identity|PluginStatus|PluginInfo|CSRoundEndReason|CSWeaponID|DataPack|DataPackPos|Function|DBResult|DBBindType|DBPriority|DBDriver|DBResultSet|SQLTxnSuccess|Transaction|Database|SQLTxnFailure|SQLConnectCallback|SQLQueryCallback|DBStatement|SQLTCallback|PropType|PropFieldType|MoveType|RenderMode|RenderFx|EventHookMode|EventHook|Event|FileType|FileTimeMode|PathType|DirectoryListing|File|ParamType|ExecType|NativeCall|RequestFrameCallback|DialogType|EngineVersion|FindMapResult|ClientRangeType|KvDataTypes|KeyValues|GameLogHook|NominateResult|MapChange|MenuStyle|MenuAction|MenuSource|MenuHandler|Panel|Menu|VoteHandler|Profiler|Protobuf|Regex|RegexError|SDKHookType|UseType|SDKHookCB|SDKCallType|SDKLibrary|SDKFuncConfSource|SDKType|SDKPassMethod|EntityOutput|RoundState|AmbientSHook|NormalSHook|TEHook|RayType|TraceEntityFilter|ListenOverride|SortOrder|SortType|SortFunc1D|SortFunc2D|SortFuncADTArray|SortADTArrayCustom|Plugin|APLRes|FeatureType|FeatureStatus|NumberType|Address|FrameIterator|SMCResult|SMCError|SMC_ParseStart|SMC_NewSection|SMC_KeyValue|SMC_EndSection|SMC_ParseEnd|SMC_RawLine|SMCParser|TFClassType|TFTeam|TFCond|TFHoliday|TFObjectType|TFObjectMode|TFResourceType|Timer|TopMenu|TopMenuAction|TopMenuObjectType|TopMenuPosition|TopMenuObject|TopMenuHandler|UserMsg|UserMessageType|MsgHook|MsgPostHook):</string>
 			<key>name</key>
 			<string>invalid.deprecated</string>
 		</dict>
@@ -310,7 +310,7 @@
 		<!-- General deprecation highlighting -->
 		<dict>
 			<key>match</key>
-			<string>\b(Float|String|SetAdmGroupImmunity|GetAdmGroupImmunity|TFCond_NoTaunting|TFCond_NoTaunting_DEPRECATED|TF2_OnGetHoliday|TF2_GetResourceEntity|TFHoliday_SpyVsEngyWar|TF2_GetPlayerResourceData|TF2_SetPlayerResourceData|TF2_GetPlayerConditionFlags|GuessSDKVersion|GetClientAuthString|IsPlayerInGame|FCVAR_PLUGIN|FCVAR_LAUNCHER|SQL_ConnectEx|SQL_QuoteString|GetEntDataEnt|SetEntDataEnt|FindSendPropOffs|FindDataMapOffs|IsValidHandle|LoadMaps|GetSoundDuration|SetClientListening|GetClientListening|AskPluginLoad|OnServerCfg|StrCompare|StrCopy|StrBreak|ImmunityType|Immunity_Default|Immunity_Global|FloatMul|FloatDiv|FloatAdd|FloatSub|SearchForClients)\b</string>
+			<string>\b(SetAdmGroupImmunity|GetAdmGroupImmunity|TFCond_NoTaunting|TFCond_NoTaunting_DEPRECATED|TF2_OnGetHoliday|TF2_GetResourceEntity|TFHoliday_SpyVsEngyWar|TF2_GetPlayerResourceData|TF2_SetPlayerResourceData|TF2_GetPlayerConditionFlags|GuessSDKVersion|GetClientAuthString|IsPlayerInGame|FCVAR_PLUGIN|FCVAR_LAUNCHER|SQL_ConnectEx|SQL_QuoteString|GetEntDataEnt|SetEntDataEnt|FindSendPropOffs|FindDataMapOffs|IsValidHandle|LoadMaps|GetSoundDuration|SetClientListening|GetClientListening|AskPluginLoad|OnServerCfg|StrCompare|StrCopy|StrBreak|ImmunityType|Immunity_Default|Immunity_Global|FloatMul|FloatDiv|FloatAdd|FloatSub|SearchForClients)\b</string>
 			<key>name</key>
 			<string>invalid.deprecated</string>
 		</dict>
@@ -323,7 +323,7 @@
 			<string>keyword</string>
 		</dict>
 
-		<!-- Storage types -->
+		<!-- General storage types -->
 		<!-- float is stored in the float.inc section due to a highlighting conflict -->
 		<dict>
 			<key>match</key>
@@ -344,6 +344,22 @@
 				<dict>
 					<key>name</key>
 					<string>support.function</string>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- enum <storage type>: {}; deprecated highlight fix.
+			 That enum shouldn't go red, but it does.
+			 This should fix any instances of that. -->
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=enum)\s+(Plugin|SharedPlugin|Extension|any|_|bool|function|Float|String|Action|Handle|AdminFlag|OverrideType|OverrideRule|OverrideId|ImmunityType|GroupId|AdminId|AdmAccessMode|AdminCachePart|ArrayList|ArrayStack|StringMap|StringMapSnapshot|BfWrite|BfRead|CookieAccess|CookieMenu|CookieMenuAction|CookieMenuHandler|NetFlow|AuthIdType|MultiTargetFilter|QueryCookie|ReplySource|SrvCmd|ConCmd|CommandListener|ConVarBounds|ConVarQueryResult|ConVarChanged|ConVar|ConVarQueryFinished|PlVers|Identity|PluginStatus|PluginInfo|CSRoundEndReason|CSWeaponID|DataPack|DataPackPos|Function|DBResult|DBBindType|DBPriority|DBDriver|DBResultSet|SQLTxnSuccess|Transaction|Database|SQLTxnFailure|SQLConnectCallback|SQLQueryCallback|DBStatement|SQLTCallback|PropType|PropFieldType|MoveType|RenderMode|RenderFx|EventHookMode|EventHook|Event|FileType|FileTimeMode|PathType|DirectoryListing|File|ParamType|ExecType|NativeCall|RequestFrameCallback|DialogType|EngineVersion|FindMapResult|ClientRangeType|KvDataTypes|KeyValues|GameLogHook|NominateResult|MapChange|MenuStyle|MenuAction|MenuSource|MenuHandler|Panel|Menu|VoteHandler|Profiler|Protobuf|Regex|RegexError|SDKHookType|UseType|SDKHookCB|SDKCallType|SDKLibrary|SDKFuncConfSource|SDKType|SDKPassMethod|EntityOutput|RoundState|AmbientSHook|NormalSHook|TEHook|RayType|TraceEntityFilter|ListenOverride|SortOrder|SortType|SortFunc1D|SortFunc2D|SortFuncADTArray|SortADTArrayCustom|Plugin|APLRes|FeatureType|FeatureStatus|NumberType|Address|FrameIterator|SMCResult|SMCError|SMC_ParseStart|SMC_NewSection|SMC_KeyValue|SMC_EndSection|SMC_ParseEnd|SMC_RawLine|SMCParser|TFClassType|TFTeam|TFCond|TFHoliday|TFObjectType|TFObjectMode|TFResourceType|Timer|TopMenu|TopMenuAction|TopMenuObjectType|TopMenuPosition|TopMenuObject|TopMenuHandler|UserMsg|UserMessageType|MsgHook|MsgPostHook)\b(?:)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.type</string>
 				</dict>
 			</dict>
 		</dict>
