@@ -1,0 +1,25 @@
+<!-- includename.inc -->
+<dict> <!-- Constants -->
+	<key>match</key>
+	<string>\b( )\b</string>
+	<key>name</key>
+	<string>support.constant</string>
+</dict>
+<dict> <!-- Functions/Forwards/Natives -->
+	<key>match</key>
+	<string>\b( )\b</string>
+	<key>name</key>
+	<string>support.function</string>
+</dict>
+<dict> <!-- Storage Types/Methodmap Classes/Typedefs/Typesets/Enum types -->
+	<key>match</key>
+	<string>\b( )\b</string>
+	<key>name</key>
+	<string>support.type</string>
+</dict>
+<dict> <!-- Methodmap Methods/Properties/Functions -->
+	<key>match</key>
+	<string>\b( )\b</string>
+	<key>name</key>
+	<string>support.function</string>
+</dict>

@@ -2,7 +2,7 @@
 	Created by 404UNF
 	http://www.404UNF.ca
 
-	Version: 18w20a
+	Version: 18w20b
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -1367,7 +1367,7 @@
 			<key>name</key>
 			<string>support.function</string>
 		</dict>
-		<dict> <!-- Storage Types/Methodmap Classes -->
+		<dict> <!-- Storage Types/Methodmap Classes/Typedefs/Typesets/Enum types -->
 			<key>match</key>
 			<string>\b(Plugin|APLRes|FeatureType|FeatureStatus|NumberType|Address|FrameIterator)\b</string>
 			<key>name</key>
@@ -1415,7 +1415,7 @@
 			<key>name</key>
 			<string>support.function</string>
 		</dict>
-		<dict> <!-- Storage Types/Methodmap Classes -->
+		<dict> <!-- Storage Types/Methodmap Classes/Typedefs/Typesets/Enum types -->
 			<key>match</key>
 			<string>\b(SMCResult|SMCError|SMC_ParseStart|SMC_NewSection|SMC_KeyValue|SMC_EndSection|SMC_ParseEnd|SMC_RawLine|SMCParser)\b</string>
 			<key>name</key>
@@ -1441,7 +1441,7 @@
 			<key>name</key>
 			<string>support.function</string>
 		</dict>
-		<dict> <!-- Storage Types/Methodmap Classes -->
+		<dict> <!-- Storage Types/Methodmap Classes/Typedefs/Typesets/Enum types -->
 			<key>match</key>
 			<string>\b(TFClassType|TFTeam|TFCond|TFHoliday|TFObjectType|TFObjectMode)\b</string>
 			<key>name</key>
@@ -1461,7 +1461,7 @@
 			<key>name</key>
 			<string>support.function</string>
 		</dict>
-		<dict> <!-- Storage Types/Methodmap Classes -->
+		<dict> <!-- Storage Types/Methodmap Classes/Typedefs/Typesets/Enum types -->
 			<key>match</key>
 			<string>\b(TFResourceType)\b</string>
 			<key>name</key>
@@ -1481,7 +1481,7 @@
 			<key>name</key>
 			<string>support.function</string>
 		</dict>
-		<dict> <!-- Storage Types/Methodmap Classes -->
+		<dict> <!-- Storage Types/Methodmap Classes/Typedefs/Typesets/Enum types -->
 			<key>match</key>
 			<string>\b(Timer)\b</string>
 			<key>name</key>
@@ -1501,7 +1501,7 @@
 			<key>name</key>
 			<string>support.function</string>
 		</dict>
-		<dict> <!-- Storage Types/Methodmap Classes -->
+		<dict> <!-- Storage Types/Methodmap Classes/Typedefs/Typesets/Enum types -->
 			<key>match</key>
 			<string>\b(TopMenu|TopMenuAction|TopMenuObjectType|TopMenuPosition|TopMenuObject|TopMenuHandler)\b</string>
 			<key>name</key>
@@ -1527,7 +1527,7 @@
 			<key>name</key>
 			<string>support.function</string>
 		</dict>
-		<dict> <!-- Storage Types/Methodmap Classes -->
+		<dict> <!-- Storage Types/Methodmap Classes/Typedefs/Typesets/Enum types -->
 			<key>match</key>
 			<string>\b(UserMsg|UserMessageType|MsgHook|MsgPostHook)\b</string>
 			<key>name</key>
