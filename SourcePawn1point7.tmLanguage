@@ -359,7 +359,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.type</string>
+					<string>storage.type</string>
 				</dict>
 			</dict>
 		</dict>
