@@ -1,0 +1,1 @@
+# SourcePawn Syntax Highlighting
