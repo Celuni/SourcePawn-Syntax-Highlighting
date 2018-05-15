@@ -2,7 +2,7 @@
 	Created by 404UNF
 	http://www.404UNF.ca
 
-	Version: 18w20c
+	Version: 18w20d
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -353,7 +353,7 @@
 			 This should fix any instances of that. -->
 		<dict>
 			<key>match</key>
-			<string>(?&lt;=enum)\s+(Plugin|SharedPlugin|Extension|any|_|bool|function|Float|String|Action|Handle|AdminFlag|OverrideType|OverrideRule|OverrideId|ImmunityType|GroupId|AdminId|AdmAccessMode|AdminCachePart|ArrayList|ArrayStack|StringMap|StringMapSnapshot|BfWrite|BfRead|CookieAccess|CookieMenu|CookieMenuAction|CookieMenuHandler|NetFlow|AuthIdType|MultiTargetFilter|QueryCookie|ReplySource|SrvCmd|ConCmd|CommandListener|ConVarBounds|ConVarQueryResult|ConVarChanged|ConVar|ConVarQueryFinished|PlVers|Identity|PluginStatus|PluginInfo|CSRoundEndReason|CSWeaponID|DataPack|DataPackPos|Function|DBResult|DBBindType|DBPriority|DBDriver|DBResultSet|SQLTxnSuccess|Transaction|Database|SQLTxnFailure|SQLConnectCallback|SQLQueryCallback|DBStatement|SQLTCallback|PropType|PropFieldType|MoveType|RenderMode|RenderFx|EventHookMode|EventHook|Event|FileType|FileTimeMode|PathType|DirectoryListing|File|ParamType|ExecType|NativeCall|RequestFrameCallback|DialogType|EngineVersion|FindMapResult|ClientRangeType|KvDataTypes|KeyValues|GameLogHook|NominateResult|MapChange|MenuStyle|MenuAction|MenuSource|MenuHandler|Panel|Menu|VoteHandler|Profiler|Protobuf|Regex|RegexError|SDKHookType|UseType|SDKHookCB|SDKCallType|SDKLibrary|SDKFuncConfSource|SDKType|SDKPassMethod|EntityOutput|RoundState|AmbientSHook|NormalSHook|TEHook|RayType|TraceEntityFilter|ListenOverride|SortOrder|SortType|SortFunc1D|SortFunc2D|SortFuncADTArray|SortADTArrayCustom|Plugin|APLRes|FeatureType|FeatureStatus|NumberType|Address|FrameIterator|SMCResult|SMCError|SMC_ParseStart|SMC_NewSection|SMC_KeyValue|SMC_EndSection|SMC_ParseEnd|SMC_RawLine|SMCParser|TFClassType|TFTeam|TFCond|TFHoliday|TFObjectType|TFObjectMode|TFResourceType|Timer|TopMenu|TopMenuAction|TopMenuObjectType|TopMenuPosition|TopMenuObject|TopMenuHandler|UserMsg|UserMessageType|MsgHook|MsgPostHook)\b(?:)</string>
+			<string>(?&lt;=enum)\s+(Plugin|SharedPlugin|Extension|any|_|bool|function|Float|String|Action|Handle|AdminFlag|OverrideType|OverrideRule|OverrideId|GroupId|AdminId|AdmAccessMode|AdminCachePart|ArrayList|ArrayStack|StringMap|StringMapSnapshot|BfWrite|BfRead|CookieAccess|CookieMenu|CookieMenuAction|CookieMenuHandler|NetFlow|AuthIdType|MultiTargetFilter|QueryCookie|ReplySource|SrvCmd|ConCmd|CommandListener|ConVarBounds|ConVarQueryResult|ConVarChanged|ConVar|ConVarQueryFinished|PlVers|Identity|PluginStatus|PluginInfo|CSRoundEndReason|CSWeaponID|DataPack|DataPackPos|Function|DBResult|DBBindType|DBPriority|DBDriver|DBResultSet|SQLTxnSuccess|Transaction|Database|SQLTxnFailure|SQLConnectCallback|SQLQueryCallback|DBStatement|SQLTCallback|PropType|PropFieldType|MoveType|RenderMode|RenderFx|EventHookMode|EventHook|Event|FileType|FileTimeMode|PathType|DirectoryListing|File|ParamType|ExecType|NativeCall|RequestFrameCallback|DialogType|EngineVersion|FindMapResult|ClientRangeType|KvDataTypes|KeyValues|GameLogHook|NominateResult|MapChange|MenuStyle|MenuAction|MenuSource|MenuHandler|Panel|Menu|VoteHandler|Profiler|Protobuf|Regex|RegexError|SDKHookType|UseType|SDKHookCB|SDKCallType|SDKLibrary|SDKFuncConfSource|SDKType|SDKPassMethod|EntityOutput|RoundState|AmbientSHook|NormalSHook|TEHook|RayType|TraceEntityFilter|ListenOverride|SortOrder|SortType|SortFunc1D|SortFunc2D|SortFuncADTArray|SortADTArrayCustom|Plugin|APLRes|FeatureType|FeatureStatus|NumberType|Address|FrameIterator|SMCResult|SMCError|SMC_ParseStart|SMC_NewSection|SMC_KeyValue|SMC_EndSection|SMC_ParseEnd|SMC_RawLine|SMCParser|TFClassType|TFTeam|TFCond|TFHoliday|TFObjectType|TFObjectMode|TFResourceType|Timer|TopMenu|TopMenuAction|TopMenuObjectType|TopMenuPosition|TopMenuObject|TopMenuHandler|UserMsg|UserMessageType|MsgHook|MsgPostHook)\b(?:)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -362,6 +362,49 @@
 					<string>storage.type</string>
 				</dict>
 			</dict>
+		</dict>
+
+		<!--
+			Community-made Include Fixes
+		-->
+		<!-- Community made storage type/methodmap constructor conflict fixes -->
+		<!-- Some methodmaps use the storage type name as the constructor name -->
+		<!-- This fixes the highlighting of that in those specific .inc files -->
+		<dict>
+			<key>match</key>
+			<string>\b(TF2Item)\(</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function</string>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- enum <custom storage type>: {}; deprecated highlight fix.
+			 That enum shouldn't go red, but it does.
+			 This should fix any instances of that. -->
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=enum)\s+(TF2ItemSlot|TF2ItemQuality|MOTDFailureReason|MOTDFailure)\b(?:)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type</string>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- Custom 1.6 syntax variable defines -->
+		<dict>
+			<key>match</key>
+			<string>\b(TF2ItemSlot|TF2ItemQuality|MOTDFailureReason|MOTDFailure):</string>
+			<key>name</key>
+			<string>invalid.deprecated</string>
 		</dict>
 
 		<!-- Include file stuff, organized by .inc file -->
@@ -1399,7 +1442,7 @@
 		<!-- string.inc -->
 		<dict> <!-- Functions/Forwards/Natives -->
 			<key>match</key>
-			<string>\b(strlen|StrContains|strcmp|strncmp|StrEqual|strcopy|Format|FormatEx|VFormat|StringToInt|StringToIntEx|IntToString|StringToFloat|StringToFloatEx|FloatToString|BreakString|TrimString|SplitString|ReplaceString|ReplaceStringEx|GetCharBytes|IsCharAlpha|IsCharNumeric|IsCharSpace|IsCharMB|IsCharUpper|IsCharLower|StripQuotes|CharToUpper|CharToLower|FindCharInString|StrCat|ExplodeString|ImplodeStrings|)\b</string>
+			<string>\b(strlen|StrContains|strcmp|strncmp|StrEqual|strcopy|Format|FormatEx|VFormat|StringToInt|StringToIntEx|IntToString|StringToFloat|StringToFloatEx|FloatToString|BreakString|TrimString|SplitString|ReplaceString|ReplaceStringEx|GetCharBytes|IsCharAlpha|IsCharNumeric|IsCharSpace|IsCharMB|IsCharUpper|IsCharLower|StripQuotes|CharToUpper|CharToLower|FindCharInString|StrCat|ExplodeString|ImplodeStrings)\b</string>
 			<key>name</key>
 			<string>support.function</string>
 		</dict>
@@ -1565,6 +1608,108 @@
 			<key>name</key>
 			<string>support.constant</string>
 		</dict>
+
+
+		<!--
+			Community-made Includes
+		-->
+
+		<!-- tf2items.inc -->
+		<dict> <!-- Constants -->
+			<key>match</key>
+			<string>\b(OVERRIDE_CLASSNAME|OVERRIDE_ITEM_DEF|OVERRIDE_ITEM_LEVEL|OVERRIDE_ITEM_QUALITY|OVERRIDE_ATTRIBUTES|OVERRIDE_ALL|PRESERVE_ATTRIBUTES|FORCE_GENERATION)\b</string>
+			<key>name</key>
+			<string>support.constant</string>
+		</dict>
+		<dict> <!-- Functions/Forwards/Natives -->
+			<key>match</key>
+			<string>\b(TF2Items_GiveNamedItem|TF2Items_CreateItem|TF2Items_SetFlags|TF2Items_SetClassname|TF2Items_SetItemIndex|TF2Items_SetQuality|TF2Items_SetLevel|TF2Items_SetNumAttributes|TF2Items_SetAttribute|TF2Items_GetFlags|TF2Items_GetClassname|TF2Items_GetItemIndex|TF2Items_GetQuality|TF2Items_GetLevel|TF2Items_GetNumAttributes|TF2Items_GetAttributeId|TF2Items_GetAttributeValue)\b</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+		<dict> <!-- Storage Types/Methodmap Classes/Typedefs/Typesets/Enum types -->
+			<key>match</key>
+			<string>\b(TF2Item)\b</string>
+			<key>name</key>
+			<string>support.type</string>
+		</dict>
+		<dict> <!-- Methodmap Methods/Properties/Functions -->
+			<key>match</key>
+			<string>\b(GiveNamedItem|DefIndex|Quality|Level|NumAttributes|SetClassname|GetClassname|GetAttributeValue|SetAttribute|GetAttributeId|TF2Items_OnGiveNamedItem|TF2Items_OnGiveNamedItem_Post|__ext_tf2items)\b</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+
+		<!-- tf2attributes.inc -->
+		<dict> <!-- Functions/Forwards/Natives -->
+			<key>match</key>
+			<string>\b(TF2Attrib_SetByName|TF2Attrib_SetByDefIndex|TF2Attrib_GetByName|TF2Attrib_GetByDefIndex|TF2Attrib_RemoveByName|TF2Attrib_RemoveByDefIndex|TF2Attrib_RemoveAll|TF2Attrib_ClearCache|TF2Attrib_SetDefIndex|TF2Attrib_GetDefIndex|TF2Attrib_SetValue|TF2Attrib_GetValue|TF2Attrib_SetRefundableCurrency|TF2Attrib_GetRefundableCurrency|TF2Attrib_ListDefIndices|TF2Attrib_GetStaticAttribs|TF2Attrib_GetSOCAttribs|TF2Attrib_IsIntegerValue|TF2Attrib_IsReady|__pl_tf2attributes|__pl_tf2attributes_SetNTVOptional)\b</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+
+		<!-- tf2idb.inc -->
+		<dict> <!-- Constants -->
+			<key>match</key>
+			<string>\b(TF2IDB_MAX_ATTRIBUTES|TF2IDB_ITEMCLASS_LENGTH|TF2IDB_ITEMSLOT_LENGTH|TF2IDB_ITEMQUALITY_LENGTH|TF2IDB_ATTRIBNAME_LENGTH|TF2IDB_ATTRIBCLASS_LENGTH|TF2ItemSlot_Primary|TF2ItemSlot_Secondary|TF2ItemSlot_Sapper|TF2ItemSlot_Melee|TF2ItemSlot_PDA|TF2ItemSlot_PDA1|TF2ItemSlot_PDA2|TF2ItemSlot_Building|TF2ItemSlot_Hat|TF2ItemSlot_Head|TF2ItemSlot_Misc|TF2ItemSlot_Action|TF2ItemSlot_Taunt|TF2ItemQuality_Normal|TF2ItemQuality_Rarity1|TF2ItemQuality_Genuine|TF2ItemQuality_Rarity2|TF2ItemQuality_Vintage|TF2ItemQuality_Rarity3|TF2ItemQuality_Rarity4|TF2ItemQuality_Unusual|TF2ItemQuality_Unique|TF2ItemQuality_Community|TF2ItemQuality_Developer|TF2ItemQuality_Selfmade|TF2ItemQuality_Customized|TF2ItemQuality_Strange|TF2ItemQuality_Completed|TF2ItemQuality_Haunted|TF2ItemQuality_ToborA|TF2ItemQuality_Collectors|TF2ItemQuality_PaintkitWeapon)\b</string>
+			<key>name</key>
+			<string>support.constant</string>
+		</dict>
+		<dict> <!-- Functions/Forwards/Natives -->
+			<key>match</key>
+			<string>\b(TF2IDB_IsValidItemID|TF2IDB_GetItemName|TF2IDB_GetItemClass|TF2IDB_GetItemSlotName|TF2IDB_GetItemSlot|TF2IDB_GetItemQualityName|TF2IDB_GetItemQuality|TF2IDB_GetItemLevels|TF2IDB_GetItemAttributes|TF2IDB_GetItemEquipRegions|TF2IDB_DoRegionsConflict|TF2IDB_ListParticles|TF2IDB_FindItemCustom|TF2IDB_ItemHasAttribute|TF2IDB_UsedByClasses|TF2IDB_IsValidAttributeID|TF2IDB_GetAttributeName|TF2IDB_GetAttributeClass|TF2IDB_GetAttributeType|TF2IDB_GetAttributeDescString|TF2IDB_GetAttributeDescFormat|TF2IDB_GetAttributeEffectType|TF2IDB_GetAttributeArmoryDesc|TF2IDB_GetAttributeItemTag|TF2IDB_GetAttributeProperties|TF2IDB_GetQualityName|TF2IDB_GetQualityByName|TF2IDB_CustomQuery|__pl_tf2idb|__pl_tf2idb_SetNTVOptional)\b</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+		<dict> <!-- Storage Types/Methodmap Classes/Typedefs/Typesets/Enum types -->
+			<key>match</key>
+			<string>\b(TF2ItemSlot|TF2ItemQuality)\b</string>
+			<key>name</key>
+			<string>support.type</string>
+		</dict>
+
+		<!-- discord.inc -->
+		<dict> <!-- Functions/Forwards/Natives -->
+			<key>match</key>
+			<string>\b(Discord_SendMessage|__pl_discord|__pl_discord_SetNTVOptional|Discord_EscapeString)\b</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+		
+		<!-- colors.inc -->
+		<dict> <!-- Constants -->
+			<key>match</key>
+			<string>\b(MAX_MESSAGE_LENGTH|MAX_COLORS|SERVER_INDEX|NO_INDEX|NO_PLAYER|Color_Default|Color_Green|Color_Lightgreen|Color_Red|Color_Blue|Color_Olive|CTag|CTagCode|CTagReqSayText2|CEventIsHooked|CSkipList|CProfile_Colors|CProfile_TeamIndex|CProfile_SayText2)\b</string>
+			<key>name</key>
+			<string>support.constant</string>
+		</dict>
+		<dict> <!-- Functions/Forwards/Natives -->
+			<key>match</key>
+			<string>\b(CPrintToChat|CPrintToChatAll|CPrintToChatEx|CPrintToChatAllEx|CRemoveTags|CSkipNextClient|CFormat|CFindRandomPlayerByTeam|CSayText2|CSetupProfile|CEvent_MapStart)\b</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+
+		<!-- advanced_motd.inc -->
+		<dict> <!-- Constants -->
+			<key>match</key>
+			<string>\b(MOTDFailure_Unknown|MOTDFailure_Disabled|MOTDFailure_Matchmaking|MOTDFailure_QueryFailed)\b</string>
+			<key>name</key>
+			<string>support.constant</string>
+		</dict>
+		<dict> <!-- Functions/Forwards/Natives -->
+			<key>match</key>
+			<string>\b(AdvMOTD_ShowMOTDPanel|AdvMOTD_OnQueryFinished)\b</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+		<dict> <!-- Storage Types/Methodmap Classes/Typedefs/Typesets/Enum types -->
+			<key>match</key>
+			<string>\b(MOTDFailureReason|MOTDFailure)\b</string>
+			<key>name</key>
+			<string>support.type</string>
+		</dict>
+		
 	</array>
 	<key>scopeName</key>
 	<string>source.sp</string>
