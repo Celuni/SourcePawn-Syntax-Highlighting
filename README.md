@@ -6,6 +6,10 @@ Syntax highlighting for the SourcePawn programming language.
 
 Download the files for the language you want. If you prefer the old 1.6 syntax, use the 1point6 file, and if you prefer the 1.7 transitional syntax, of course, use the 1point7 file. A custom color scheme is included and is set to be used by default when viewing .sp/.inc files. If you want to disable that, just delete the `.sublime-settings` file. Extract the files to `C:\Users\YourUsername\AppData\Roaming\Sublime Text 3\Packages\User`.
 
+## Info
+
+The contents of the highlighting are kept up to date with the latest SourceMod 1.10 dev build. The 1point7 language has deprecation highlighting for any 1.6 syntax code that should be converted/removed. 1point6 is 1.6 syntax-friendly, and won't highlight it red.
+
 ## Found a bug?
 
 I've tried to ensure that the highlighting works properly, but there may still be some edge cases I haven't discovered yet. If you happen to find one of these edge cases, please do submit an issue report and I'll get right to fixing it.
