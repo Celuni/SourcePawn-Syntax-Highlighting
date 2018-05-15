@@ -13,3 +13,9 @@ I've tried to ensure that the highlighting works properly, but there may still b
 ## Custom include suggestions?
 
 I plan on adding in highlighting for several community-made include files such as TF2Items, TF2Attributes, Colors/MoreColors/MultiColors, and others. If there is an include file that you'd like to see support for added, submit an issue report and use the `custom include` label.
+
+## Preview
+
+![Preview 1](https://i.imgur.com/ljjLfVL.png)
+
+![Preview 2](https://i.imgur.com/QmJpEPS.png)
