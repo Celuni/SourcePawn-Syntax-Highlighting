@@ -14,6 +14,16 @@ I've tried to ensure that the highlighting works properly, but there may still b
 
 I plan on adding in highlighting for several community-made include files such as TF2Items, TF2Attributes, Colors/MoreColors/MultiColors, and others. If there is an include file that you'd like to see support for added, submit an issue report and use the `custom include` label.
 
+## Supported community-made includes
+
+* [TF2Items](https://forums.alliedmods.net/showthread.php?t=115100)
+* [TF2Attributes](https://forums.alliedmods.net/showthread.php?t=210221)
+* [TF2IDB](https://forums.alliedmods.net/showthread.php?t=255885)
+* [Colors](https://forums.alliedmods.net/showthread.php?t=96831)
+* [AdvancedMOTD](https://forums.alliedmods.net/showthread.php?t=232476)
+* [Discord](https://forums.alliedmods.net/showthread.php?t=292663)
+* More to come!
+
 ## Preview
 
 ![Preview 1](https://i.imgur.com/ljjLfVL.png)
