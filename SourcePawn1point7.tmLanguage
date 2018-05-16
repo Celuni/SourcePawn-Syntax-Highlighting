@@ -242,7 +242,7 @@
 		<!-- view_as<Dstring>(new DataPack); -->
 		<dict>
 			<key>match</key>
-			<string>(?&lt;=&gt;\()\b(new)\b</string>
+			<string>(?&lt;=&gt;\()(\s+|)\b(new)\b</string>
 			<key>name</key>
 			<string>keyword</string>
 		</dict>
