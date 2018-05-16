@@ -2,7 +2,7 @@
 	Created by 404UNF
 	http://www.404UNF.ca
 
-	Version: 18w20d
+	Version: 18w20e
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -237,6 +237,22 @@
 			<string>keyword.operator</string>
 		</dict>
 
+		<!-- 1.7 Transitional syntax 'new' usage bugfix (thanks ^Scag!) -->
+		<!-- return new DString(buffer) -->
+		<!-- view_as<Dstring>(new DataPack); -->
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=&gt;\()\b(new)\b</string>
+			<key>name</key>
+			<string>keyword</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=return)\b\s+\b(new)\b</string>
+			<key>name</key>
+			<string>keyword</string>
+		</dict>
+		
 		<!-- 1.6 for loop 'new' usage check -->
 		<dict>
 			<key>match</key>
