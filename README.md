@@ -14,11 +14,15 @@ This package contains two separate highlighting versions: `SourcePawnOld` and `S
 
 ## 1.6 syntax deprecation highlighting example
 In the code snippet below, both the 'new' variable declaration and the 'GetMaxClients' function will be highlighted:
+
 `for (new i = 0; i < GetMaxClients(); i++)`
+
 
 *The GetMaxClients function highlight is not part of the 1.6 deprecation highlighting.*
 
+
 In the new 1.7 transitional syntax, the above code would be done like so:
+
 `for (int i = 0; i < MaxClients; i++)`
 
 
