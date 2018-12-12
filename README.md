@@ -1,35 +1,26 @@
 # Sublime Text 3 SourcePawn Syntax Highlighting
 
-Syntax highlighting for the SourcePawn programming language. 
+Syntax highlighting for the SourcePawn programming language. Everything has been updated to be complete as of SourceMod 1.10 (Build 6364).
 
 ## Installing
+Extract the files to `C:\Users\YourUsername\AppData\Roaming\Sublime Text 3\Packages\User`.
 
-Download the files for the language you want. If you prefer the old 1.6 syntax, use the 1point6 file, and if you prefer the 1.7 transitional syntax, of course, use the 1point7 file. A custom color scheme is included and is set to be used by default when viewing .sp/.inc files. If you want to disable that, just delete the `.sublime-settings` file. Extract the files to `C:\Users\YourUsername\AppData\Roaming\Sublime Text 3\Packages\User`.
+This package contains two separate highlighting versions: `SourcePawnOld` and `SourcePawnNew`, labelled on your ST3 syntax list as `SourcePawn - 1.6` and `SourcePawn - 1.7+` respectively.
 
-## Info
+`SourcePawnNew` (*SourcePawn - 1.7+*) contains deprecation highlighting for the older 1.6 syntax variable declaration/usage methods that have since been replaced with the new 1.7+ "transitional" syntax. This will highlight specific things red which comes in handy when working on updating the syntax of older plugins.
 
-The contents of the highlighting are kept up to date with the latest SourceMod 1.10 dev build. The 1point7 language has deprecation highlighting for any 1.6 syntax code that should be converted/removed. 1point6 is 1.6 syntax-friendly, and won't highlight it red.
+`SourcePawnOld` (*SourcePawn - 1.6*)contains no such deprecation highlighting, instead opting to highlight 1.6 syntax usage. Use this version if you still make plugins with 1.6 syntax.
+
+
+## 1.6 syntax deprecation highlighting example
+In the code snippet below, both the 'new' variable declaration and the 'GetMaxClients' function will be highlighted:
+`for (new i = 0; i < GetMaxClients(); i++)`
+
+*The GetMaxClients function highlight is not part of the 1.6 deprecation highlighting.*
+
+In the new 1.7 transitional syntax, the above code would be done like so:
+`for (int i = 0; i < MaxClients; i++)`
+
 
 ## Found a bug?
-
 I've tried to ensure that the highlighting works properly, but there may still be some edge cases I haven't discovered yet. If you happen to find one of these edge cases, please do submit an issue report and I'll get right to fixing it.
-
-## Custom include suggestions?
-
-I plan on adding in highlighting for several community-made include files such as TF2Items, TF2Attributes, Colors/MoreColors/MultiColors, and others. If there is an include file that you'd like to see support for added, submit an issue report and use the `custom include` label.
-
-## Supported community-made includes
-
-* [TF2Items](https://forums.alliedmods.net/showthread.php?t=115100)
-* [TF2Attributes](https://forums.alliedmods.net/showthread.php?t=210221)
-* [TF2IDB](https://forums.alliedmods.net/showthread.php?t=255885)
-* [Colors](https://forums.alliedmods.net/showthread.php?t=96831)
-* [AdvancedMOTD](https://forums.alliedmods.net/showthread.php?t=232476)
-* [Discord](https://forums.alliedmods.net/showthread.php?t=292663)
-* More to come!
-
-## Preview
-
-![Preview 1](https://i.imgur.com/ljjLfVL.png)
-
-![Preview 2](https://i.imgur.com/QmJpEPS.png)

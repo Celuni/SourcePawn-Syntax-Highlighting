@@ -1,0 +1,4 @@
+// These settings override both User and Default settings for the SourcePawnOld syntax
+{
+	"color_scheme": "Packages/User/SourcePawn.tmTheme"
+}

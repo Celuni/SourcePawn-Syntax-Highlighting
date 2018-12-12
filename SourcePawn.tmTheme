@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+################################################
+# SourcePawn syntax color scheme
+# Created by 404UNF
+#
+# Version: 18w50a - Beta Testing Release
+#
+# http://www.steamcommunity.com/id/404UNF
+# http://www.404UNF.ca
+# http://www.github.com/404UNFca
+################################################
+-->
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>SourcePawn</string>
+	<string>Monokai</string>
 	<key>settings</key>
 	<array>
 		<dict>
