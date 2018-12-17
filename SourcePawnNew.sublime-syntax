@@ -10,7 +10,7 @@ scope: source
 # SourcePawn "Transitional" syntax highlighting
 # Created by 404UNF
 #
-# Version: 18w50a - Beta Testing Release
+# Version: 18w51a - Beta Testing Release 2
 #
 # http://www.steamcommunity.com/id/404UNF
 # http://www.404UNF.ca
@@ -20,7 +20,6 @@ scope: source
 # BEGIN: Variables
 variables:
   # Numerals
-#  numerals: '(?!=\w)\-?\b[0-9]+\.?[0-9]*\b'
   numerals: '(?<![\w\]\)])\-?\b[0-9]+\.?[0-9]*\b'
   hex_numerals: '\b0x[0-9a-fA-F]{0,8}\b'
   binary_numerals: '\b0b[0-1]+\b'
@@ -29,25 +28,21 @@ variables:
   storage_types: '\b(any|bool|char|float|int|void|Action|Handle|Function)\b'
   support_types: '\b(ArrayList|ArrayStack|StringMap|DataPack|DataPackPos|Transaction|KeyValues|Menu|Panel|Profiler|Regex|FrameIterator|SMCParser|TopMenu|AdminFlag|OverrideType|OverrideRule|OverrideId|GroupId|AdminId|AdmAccessMode|AdminCachePart|StringMapSnapshot|BfWrite|BfRead|CookieAccess|CookieMenu|CookieMenuAction|CookieMenuHandler|NetFlow|AuthIdType|MultiTargetFilter|QueryCookie|ReplySource|SrvCmd|ConCmd|CommandListener|CommandIterator|ConVarBounds|ConVarQueryResult|ConVarChanged|ConVar|ConVarQueryFinished|PlVers|Identity|PluginStatus|PluginInfo|CSRoundEndReason|CSWeaponID|DBResult|DBBindType|DBPriority|DBDriver|DBResultSet|SQLTxnSuccess|Database|SQLTxnFailure|SQLConnectCallback|SQLQueryCallback|DBStatement|SQLTCallback|PropType|PropFieldType|MoveType|RenderMode|RenderFx|EventHookMode|EventHook|Event|FileType|FileTimeMode|PathType|DirectoryListing|File|ParamType|ExecType|NativeCall|RequestFrameCallback|DialogType|EngineVersion|FindMapResult|ClientRangeType|KvDataTypes|GameLogHook|NominateResult|MapChange|MenuStyle|MenuAction|MenuSource|MenuHandler|VoteHandler|Protobuf|RegexError|SDKHookType|UseType|SDKHookCB|SDKCallType|SDKLibrary|SDKFuncConfSource|SDKType|SDKPassMethod|EntityOutput|RoundState|AmbientSHook|NormalSHook|TEHook|RayType|TraceEntityFilter|ListenOverride|SortOrder|SortType|SortFunc1D|SortFunc2D|SortFuncADTArray|TraceEntityEnumerator|Plugin|SharedPlugin|Extension|APLRes|FeatureType|FeatureStatus|NumberType|Address|SMCResult|SMCError|SMC_ParseStart|SMC_NewSection|SMC_KeyValue|SMC_EndSection|SMC_ParseEnd|SMC_RawLine|TFClassType|TFTeam|TFCond|TFHoliday|TFObjectType|TFObjectMode|TFResourceType|Timer|TopMenuAction|TopMenuObjectType|TopMenuPosition|TopMenuObject|TopMenuHandler|UserMsg|UserMessageType|MsgHook|MsgPostHook|GameData)\b'
 
-  ##################################################################
-  # 1.6 syntax storage types, still used in enums in 1.7 transitional syntax.
-  # Don't want to highlight these as instances of deprecated 1.6 syntax usage.
+  # 1.6 syntax storage types
   storage_types_oldsyntax: '\b(any|_|bool|String|Handle|Float|String|Action|Function)\b'
 
-  ##################################################################
+  # All support constants
   # Required for the enum highlighting fix
   all_constants: '\b({{admin_constants}}|{{adminmenu_constants}}|{{banning_constants}}|{{clientprefs_constants}}|{{clients_constants}}|{{commandfilters_constants}}|{{console_constants}}|{{convars_constants}}|{{core_constants}}|{{cstrike_constants}}|{{dbi_constants}}|{{entity_constants}}|{{entityps_constants}}|{{events_constants}}|{{files_constants}}|{{float_constants}}|{{functions_constants}}|{{halflife_constants}}|{{handles_constants}}|{{keyvalues_constants}}|{{lang_constants}}|{{mapchooser_constants}}|{{menus_constants}}|{{protobuf_constants}}|{{regex_constants}}|{{sdkhooks_constants}}|{{sdktools_constants}}|{{sdktools_engine_constants}}|{{sdktools_gamerules_constants}}|{{sdktools_hooks_constants}}|{{sdktools_sound_constants}}|{{sdktools_stringtables_constants}}|{{sdktools_testocks_constants}}|{{sdktools_trace_constants}}|{{sdktools_voice_constants}}|{{sorting_constants}}|{{testing_constants}}|{{textparse_constants}}|{{tf2_constants}}|{{tf2stocks_constants}}|{{timers_constants}}|{{topmenus_constants}}|{{usermessages_constants}}|{{version_constants}})\b'
 
-  ##################################################################
   # Miscellaneous
   control_keywords: '\b(if|else|for|while|do|switch|case|default|break|return|sizeof|delete|get|set|view_as|cast_as|using)\b'
   variable_declarations: '\b(const|static)\b'
   variable_declarations_oldsyntax: '\b(new|decl)\b'
   boolean_values: '\b(true|false)\b'
-  visibility: '\b(public|private|stock|native|typeset|typedef|methodmap|property|enum|forward|struct|function)\b'
+  visibility: '\b(public|private|stock|native|typeset|typedef|methodmap|property|enum|struct|forward|function)\b'
   operators: '(#(?:define|undef|if|else|elseif|endif|endinput|pragma|include|tryinclude|assert|emit|error))\b'
 
-  ##################################################################
   # Include file contents, organized by include.
 
   # admin.inc
@@ -314,7 +309,6 @@ variables:
   # version.inc/version_auto.inc
   version_constants: '\b(SOURCEMOD_V_TAG|SOURCEMOD_V_REV|SOURCEMOD_V_CSET|SOURCEMOD_V_MAJOR|SOURCEMOD_V_MINOR|SOURCEMOD_V_RELEASE|SOURCEMOD_VERSION)\b'
 
-  ##################################################################
   # Insert custom include definitions below this line
 
 
@@ -329,14 +323,14 @@ contexts:
     - include: 1point6
     - include: numbers
     - include: comments
+    - include: strings
     - include: pragmatics
     - include: enums
-    - include: strings
     - include: keywords
-    - include: functions
-    - include: constants
     - include: storage_types
     - include: deprecations
+    - include: functions
+    - include: constants
 
   fixes:
     # Storage type/Methodmap constructor conflict fix
@@ -355,7 +349,6 @@ contexts:
       scope: constant.numeric
 
   comments:
-    ##################################################################
     # Comment documentation highlighting
     # Captures anything between /** and */
     # Captures variables defined as in the example below;
@@ -374,11 +367,9 @@ contexts:
           captures:
             0: punctuation.definition.comment
           pop: true
-      #  - match: '@{{comment_documentation}}'
         - match: '(@(?:return|noreturn|note|section|endsection|error))'
           scope: keyword.operator
 
-        ##################################################################
         # Just a fun thing I did that affects the license portion at the
         # top of the base SourceMod .inc files/plugins.
         # Feel free to uncomment the lines below if you want to.
@@ -452,30 +443,13 @@ contexts:
         4: comment
 
   enums:
-    ##################################################################
     # Enum highlighting
-    # Handles various highlighting edge cases such as not labelling
-    # old 1.6 syntax variable declarations within enums, as those
-    # have not yet updated to use transitional syntax declarations.
-    - match: '\b(enum)\b((?:\s+)({{storage_types}}|{{storage_types_oldsyntax}}|{{support_types}})|)'
+    # Handles various enum cases
+    - match: '\b(enum)\b((?:\s+)(?:(struct\s+|))({{storage_types}}|{{storage_types_oldsyntax}}|{{support_types}})|)'
       captures:
         1: keyword.control
-        2: storage.type
-      push:
-        # 1.6 syntax variable declaration
-        # Highlights old style var decl usage as invalid
-        # Only covers old syntax storage types & support types
-        - match: '({{storage_types}}|{{storage_types_oldsyntax}}|{{support_types}})(\:)'
-          captures:
-            0: invalid.deprecated
-        # Include all this other stuff so that the highlighting works inside enums.
-        - include: constants
-        - include: deprecations
-        - include: comments
-        - include: numbers
-        - include: storage_types
-        - match: '\}'
-          pop: true
+        3: keyword.control 
+        4: storage.type
 
   keywords:
     - match: '(\#include|\#tryinclude)(?:\s+)*[<\"](.+?)[>\"]'
@@ -486,8 +460,7 @@ contexts:
     - match: '(?<=\=)(?:\s+|)\b(new)\b'
       captures:
         1: keyword.control
-    # 1.6 for loop 'new' usage detection
-#    - match: '(?<=for\s\()(new)'
+    # [1.6] for loop 'new' usage detection
     - match: '(?<=(for))(?=(?:\s\()(new))'
       captures:
         2: invalid.deprecated
@@ -507,7 +480,7 @@ contexts:
 
   storage_types:
     # Highlight 1.6 usage as deprecated
-    - match: '({{storage_types_oldsyntax}}|{{support_types}})(:)'
+    - match: '({{storage_types}}|{{storage_types_oldsyntax}}|{{support_types}})(:)'
       scope: invalid.deprecated
     - match: '{{storage_types}}|{{support_types}}'
       scope: storage.type
