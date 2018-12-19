@@ -451,17 +451,6 @@ contexts:
         1: keyword.control
         3: keyword.control
         4: storage.type
-      push:
-        - match: '({{storage_types}}|{{storage_types_oldsyntax}}|{{support_types}})(\:|)'
-          captures:
-            1: storage.type
-            2: storage.type
-        - include: constants
-        - include: deprecations
-        - include: comments
-        - include: numbers
-        - match: '\}'
-          pop: true
 
   keywords:
     - match: '(\#include|\#tryinclude)(?:\s+)*[<\"](.+?)[>\"]'
