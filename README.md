@@ -28,3 +28,6 @@ In the new 1.7 transitional syntax, the above code would be done like so:
 
 ## Found a bug?
 I've tried to ensure that the highlighting works properly, but there may still be some edge cases I haven't discovered yet. If you happen to find one of these edge cases, please do submit an issue report and I'll get right to fixing it.
+
+## 06/04/2019
+I'm still working on this, there's a very big update coming very soon.
